@@ -1,0 +1,36 @@
+.reveal .cap {
+	text-transform: capitalize;
+}
+
+.reveal .inline {
+	display: inline;
+}
+
+.reveal .canvas {
+	width: 1000px;
+	height: 550px;
+	background: url('/img/seamless_paper_texture.png') repeat;
+	border: 3px solid grey;
+	border-radius: 9px;
+}
+
+.reveal .dark {
+	color: #1f1f1f;
+}
+
+.reveal .red {
+	color: red;
+}
+
+.reveal .noshadow {
+	text-shadow: none;
+}
+
+.reveal .loud {
+	font-size: 6em;
+	font-family: impact;
+}
+
+.reveal .greyBg {
+	background-color: rgba(92,92,92,0.5);
+}

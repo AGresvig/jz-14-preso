@@ -1,0 +1,397 @@
+//Any section element inside of this container is displayed as a slide 
+
+section
+  h1 Choosing tools
+  h3 The right way
+  p: small #[a(href='http://blog.akselgresvig.com') Aksel Gresvig] - #[a(href='http://accenture.no') Accenture] - 
+    | JavaZone '14
+
+section
+  section
+    h2 What this talk is about
+    ul
+      li.fragment Situation: We make software (decisions)
+      li.fragment Complication: The nature of our industry
+      li.fragment Complication: The nature of humans
+      li.fragment Conclusion: Choosing the right tools is hard
+      li.fragment Message: Use-case always comes first. Then tech reqs.
+      li.fragment Case in point: Web App frontend solutions
+
+  section(data-markdown).
+    ## My motivation
+    * Projects using the wrong tools (and the reasons for it)
+    * Blog posts like ["Why we left Angular"](https://news.ycombinator.com/item?id=7255227)
+
+  aside.notes(data-markdown).
+    * May seem obvious, but Ive seen the wrong terms over and over
+
+  section
+    h2 What's in it for you?
+    h4.fragment Some hard-earned advice on what to keep in mind when planning new projects
+    h4.fragment Some up-to-date insight into the frontend architecture options
+
+section
+  section
+    h3 We make software
+    h2.fragment Why?
+    .fragment  
+      p To solve problems.
+      p Usually pretty tricky problems
+
+  section(data-markdown).
+    This involves a lot of 
+    ## Decision making
+
+  section
+    h2 You've been building software for years
+    p.fragment So your toolbox is already pretty loaded..  
+    .fragment
+      p You have a set of preferences and skills that'll make you biased when architecting solutions.  
+      p Rightfully so - this is the value of experience.
+
+    aside.notes(data-markdown)
+      * The danger is to get wound up in our own preferable ways of doing things
+
+  section
+    h2 The nature of our industry
+    .fragment
+      p ..is tiresome.  
+      ul
+        li Staying up to date demands a lot
+        li There will *always* be new options around that promise the holy grail.  
+        li FOSS has made the landscape so fertile, yet so vast.  
+
+    aside.notes(data-markdown).
+      * What you did last year isnt necessarily good enough anymore
+      * A lot of smart people out there, solving problems every day.  
+      * Latest advancements in software technology *should be considered*
+
+section
+  section
+    h2 What makes it even harder is that we are human
+    h3.fragment We are
+    ul.fragment
+      li Lazy habit-makers
+      li Flock animals
+      li Impressionable
+
+    aside.notes(data-markdown).
+      human nature makes us prone to making hasted and uneducated choices
+
+  section
+    h1 We're lazy
+    h3.fragment Habit makers - 
+    p.fragment do what they've done before because they are comfortable with it.
+    p.fragment think new stuff is scary stuff
+    p.fragment think repetition is easier than innovation
+
+  section
+    h1 We're Flock animals
+    p.fragment Do whatever everyone else is doing
+    blockquote.fragment AngularJS all over the place? Must be good lets use it
+
+  section
+    h1 We're Impressionable
+    p.fragment We believe the hype
+    p.fragment Golden kid at last conference always gets attention
+    p.fragment Fancy promo-site and API docs gets us (guilty!)
+
+section
+  section
+    p So how do we navigate the
+    h2 TECHNICAL LANDSCAPE
+    p and deal with our own
+    h2 LIMITATIONS?
+
+  section
+    p We ask the right
+    h2 QUESTIONS
+    p to find the right
+    h2 ANSWERS
+
+    aside.notes(data-markdown).
+      * We need info
+      * about the problem domain
+      * about the user
+      * about the techinical limitations
+
+  section
+    p What really matters is the 
+    h1.fragment.fade-out Use Case
+    h1.fragment.fade-in User
+
+  section  
+    p What should the software you are building do? 
+    p Who is the target user?
+    p.fragment.fade-in These are matters that always #[b should take precedence]
+
+  section
+    h3 Gain a #[h1 THOROUGH] understanding of your applications' problem domain
+  section
+    h3 Gain a #[h1 SOLID] understanding of your applications' technical requirements
+
+  section
+    h3.cap Example Considerations
+    ul 
+      li.fragment Will we need a lot of user input? 
+      li.fragment What are the target user's habits, and consumption devices?
+      li.fragment Content-driven or data-driven?
+      li.fragment Public or Private?
+      li.fragment SEO importance
+      li.fragment Requirements and desires regarding speed & responsiveness
+
+  section
+    h2 Use this info to #[h1 TAILOR] the solution to your user's needs and your technical requirements
+
+
+section
+  section
+    h2.cap Case-study: 
+    h2.cap Webapp frontend solutions
+    p.fragment Lets look at webapps! After all, its what the majority of us are building these days
+
+  section
+    p Webapps are used by people, not machines
+    p UX for your use case should be front and center when planning out the solution.
+
+    aside.notes(data-markdown).
+      UX (ease of use, intuituveness, attractiveness)
+
+  section
+    h2.cap Decisions, decisions
+    p So much to choose from, something new every year
+    p Last year - Angular
+    p This year - React, Meteor
+    p MV*, SPA, Serverside vs Clientside - greatly differing technical approaches to the same problems
+    p So #[h3.fragment How to choose?]
+
+  
+section
+  section
+    p Lets consider some fundamentally different technical approaches
+    .fragment 
+      p like
+      h2 Clientside rendering
+      p (Backbone, Angular, Ember, Knockout)
+  section
+    p ..vs 
+    h2 server-side rendering 
+    p (JSP, Django, Ruby on Rails, Wicket, etc)
+  
+  section
+    h3.cap Clientside frameworks 
+    p Server sends Javascript to client 
+    p -> execute on client 
+    p -> fetch data, render UI
+    p.fragment: b WHY do this on a consumer device when we have peta-zeta datacenters that can do this for us?
+
+  section
+    p Because partial rendering and UI animations provide a 
+    h3 more responsive experience
+
+    aside.notes(data-markdown).
+      * In applications with a lot dynamics (i.e. updating content), a lot of I/O, and generally data-driven platforms, this is extremely important
+
+  section
+    h3.cap Where SPAs win over traditional webapps
+    li.fragment Responsive experience - no disturbing "flash of white"
+    li.fragment Speed (once bootstrapped) 
+    li.fragment Separation of concerns - server provides data, client handles displaying it
+
+    aside.notes.
+      * Fluid native-like user experience
+      * So we can create an efficient and pleasant experience for the end user, that *doesn't take her out of context*
+      * Let her be in the zone, and for chirst sake do not let her productivity and experience be hampered in any way by the request/response cycles that are HTTP!
+
+  section
+    h3.cap Where traditional server-side rendering wins over SPAs
+    li.fragment "Initial load"-performance - especially on slower mobile devices
+    li.fragment Search engine optimization hampered by crawlability
+    
+    aside.notes.
+      * initial time-to-content can be unacceptable
+      * The magic 1-second-limit 
+      * Twitter make-over: reduce initial TTC by moving to server-side rendering 
+      * Because the server sends data, not formatted content. It is formatted client-side, the crawlers only see the "empty" html skeleton
+section
+  section
+    h2.cap Typical SPA projects are
+    li.fragment Behind a login (SEO not as important)
+    li.fragment Data-driven, with Input being important (not just Output)
+    li.fragment Web #[b apps!]
+
+  section
+    h2.cap Typical server-side MVC based projects are
+    li.fragment Public facing - SEO is important
+    li.fragment Content driven
+    li.fragment Fairly static (additions are common but not updates)
+    li.fragment Cacheable
+    li.fragment Web #[b sites!]
+
+  section
+    p There is a difference in nature between a 
+    h2 WEB APP
+    p and a 
+    h2 WEB PAGE
+
+    aside.notes(data-markdown).
+      * Both can be built using the same underlying technologies, but the goals are very different.
+
+  section
+    p Which one are you building? 
+    h3.cap This should greatly inform choice of framework
+
+section
+  section
+    h1 The hybrid approach
+    h3.cap.fragment Is there such a thing as "best of both worlds?"
+    
+    aside.notes(data-markdown).
+      * No such thing as "one-size-fits-all"
+      * Wouldnt it be fantastic with all the upsides and few of the downsides?
+
+  section
+    h2 pjax
+    p: code pjax = pushState + ajax
+    blockquote pjax loads html from your server into the current page without a full page load
+
+  section
+    blockquote The idea is you can't tell the difference between pjax page loads and normal page loads. On complicated sites, browsing just "feels faster."
+    blockquote.fragment But really it's just ajax and pushState.
+
+  section
+    p On the client 
+    pre: code.
+      <body>
+        <h1>My Site</h1>
+        <div class="container" id="pjax-container">
+          Go to <a href="/page/2">next page</a>.
+        </div>
+      </body>
+
+    pre: code.javascript $(document).pjax('a', '#pjax-container')
+
+  section
+    p On the server
+    pre: code.rails.
+      def index
+        if request.headers['X-PJAX']
+          render :layout => false
+        end
+      end
+
+  section
+    p Why is this cool?
+    p.fragment Because its simple. Simple is good
+    p.fragment It gives SPA feel with server-side benefits
+
+  section
+    h3.cap But..
+    p it doesn't really scale to full-size web app development
+
+  section
+    h1 Isomorphic Apps
+    h3.fragment Write once, run twice
+    p.fragment The Holy Grail of webapp development?
+
+    aside.notes
+      p This approach has gained traction over the past year
+
+  section
+    p Advancements in frontend tooling helps make it possible
+    ul
+      li.fragment #[a(href='http://nodejs.org/') Node.JS] - JS on the server
+      li.fragment #[a(href='http://browserify.org/') Browserify] - use browser JS modules on the server 
+      li.fragment #[a(href='http://facebook.github.io/react/') Facebooks React] - Build reactive UIs in JS 
+
+    aside.notes(data-markdown).
+      * Evangelized by Spike Brehm of AirBnB
+
+  section
+    b The idea:
+    .fragment
+      p Put common application logic in
+      h3 Reusable
+      p JS modules and run them where it makes sense (server or client)
+
+  section
+    p Examples
+    ul
+      li.fragment Re-use validation rules client and server-side
+      li.fragment Render on the server initially, and then on client
+      li.fragment Use same models/data-structure
+
+  section(data-state="isomorphic-diagram")
+    h2 Isomorphic Apps - illustration
+    
+    #isomorphic.canvas
+
+    script.
+      head(function(){ Reveal.addEventListener( 'isomorphic-diagram', function( event ) {
+        setTimeout(function() {
+          $('#isomorphic').empty();
+          
+          //Add a drawing area to element with id 'figure', with the given width and height
+          var figure = gofigure.create('isomorphic', '703', '600'); 
+
+          //Draw a box and animate drawing immediately
+          //box <drawing area or animatable>.box(x, y, width, height, [options])
+          //centeredText <drawing area or animatable>.centeredText(x, y, text, [options])
+          var browserY = 100.
+              browserWidth = 303;
+          figure.box(3, browserY, browserWidth, 300, {radius: 0})
+            .centeredText(70, browserY+20, "BROWSER", {fontsize: 27})
+            .line(3, browserY+35, browserWidth, browserY+35)
+            .animate();
+          
+          var serverX = 500,
+              serverHeight = 450;
+          figure.box(serverX, 10, 200, serverHeight, {radius: 0})
+            .centeredText(serverX+53, 30, "SERVER", {fontsize: 27})
+            .line(serverX, 42, 800, 42)
+            .animate();
+
+          //Group two animations together and begin animation immediately
+          //path <drawing area or animatable>.path(points, [options])
+          gofigureplugin.addStep('isomorphic', 
+            figure.box(20, browserY+50, 170, 100)
+              .centeredText(103, browserY+72, "Clientside logic", {fontsize: 23})
+              .centeredText(100, browserY+110, "window, $, DOM")
+          );
+          gofigureplugin.addStep('isomorphic', 
+            figure.box(serverX+15, 70, 170, 200)
+              .centeredText(serverX+100, 88, "Severside logic", {fontsize: 23})
+              .centeredText(serverX+90, 125, "req/res, env")
+          );
+
+          gofigureplugin.addStep('isomorphic', 
+            figure.circle(serverX+145, 200, 30, {duration: 100})
+              .circle(serverX+145, 215, 30, {duration: 100})
+              .circle(serverX+145, 230, 30, {duration: 100})
+              .circle(serverX+57, 200, 30, {duration: 100})
+              .circle(serverX+57, 215, 30, {duration: 100})
+              .circle(serverX+57, 230, 30, {duration: 100})
+              .centeredText(serverX+100, 165, "I/O")
+          );
+
+          var opts = {arrowheads: "end", duration:500 };
+          gofigureplugin.addStep('isomorphic', 
+            figure.arrow(browserWidth, browserY+50, serverX, browserY+50, opts)
+              .centeredText(browserWidth+100, browserY+70, "JSON Data", opts)
+              .arrow(serverX, browserY+90, browserWidth, browserY+90, opts)
+          );
+          
+          var dur = {duration: 400};
+          gofigureplugin.addStep('isomorphic', 
+            figure.circle(browserWidth+100, 305, 160)
+              .centeredText(browserWidth+100, 265, "Common Logic", {fontsize: 23, duration: 800})             
+              .centeredText(browserWidth+100, 305, "Markup/Rendering", dur)
+              .centeredText(browserWidth+100, 325, "Validation", dur)
+              .centeredText(browserWidth+100, 345, "Data-models", dur)
+          );
+        }, 1000);
+      }, false);});
+
+  section(data-background='/img/hipocrite.jpg').greyBg
+    h2.dark Hi my name is Aksel, and I am a
+    h1.red.loud.noshadow hipocrite
