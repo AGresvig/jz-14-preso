@@ -1,8 +1,8 @@
 //Any section element inside of this container is displayed as a slide 
 
 section
-  h1 Choosing tools
-  h3 The right way
+  h1 How to choose tools
+  h3 Finding the right terms & avoiding the "hammer first"-principle
   p: small #[a(href='http://blog.akselgresvig.com') Aksel Gresvig] - #[a(href='http://accenture.no') Accenture] - 
     | JavaZone '14
 
@@ -10,12 +10,16 @@ section
   section
     h2 What this talk is about
     ul
-      li.fragment Situation: We make software (decisions)
+      li Situation: We make software (decisions)
       li.fragment Complication: The nature of our industry
       li.fragment Complication: The nature of humans
-      li.fragment Conclusion: Choosing the right tools is hard
-      li.fragment Message: Use-case always comes first. Then tech reqs.
+      li.fragment Conclusion: Defining terms & choosing tools is hard
+      li.fragment Message: Use-case always first - then tech reqs.
       li.fragment Case in point: Web App frontend solutions
+
+  section
+    p I talk about frontend architecture because this is my main domain
+    p But the principles didscussed apply to software architecture in general
 
   section(data-markdown).
     ## My motivation
@@ -35,27 +39,16 @@ section
     h3 We make software
     h2.fragment Why?
     .fragment  
-      p To solve problems.
-      p Usually pretty tricky problems
-
-  section(data-markdown).
-    This involves a lot of 
-    ## Decision making
-
-  section
-    h2 You've been building software for years
-    p.fragment So your toolbox is already pretty loaded..  
-    .fragment
-      p You have a set of preferences and skills that'll make you biased when architecting solutions.  
-      p Rightfully so - this is the value of experience.
-
-    aside.notes(data-markdown)
-      * The danger is to get wound up in our own preferable ways of doing things
+      p To solve problems
+    
+    aside.notes(data-markdown).
+      * Its our job to do our best at solving the problem
+      *  Need to ensure we have the technologically best possible starting point for solving the problem at hand
 
   section
     h2 The nature of our industry
+    p ..is tiresome.  
     .fragment
-      p ..is tiresome.  
       ul
         li Staying up to date demands a lot
         li There will *always* be new options around that promise the holy grail.  
@@ -66,32 +59,41 @@ section
       * A lot of smart people out there, solving problems every day.  
       * Latest advancements in software technology *should be considered*
 
+  section
+    h2 You've been building software for years
+    p.fragment So your toolbox is already pretty loaded..  
+    .fragment
+      p You have a set of preferences and skills that'll make you biased when architecting solutions.  
+      p Rightfully so - this is the value of experience.
+
+    aside.notes(data-markdown).
+      * Good thing. 
+      * We know what we're doing
+      * But the danger is to get wound up in our own preferable ways of doing things
+
 section
   section
-    h2 What makes it even harder is that we are human
-    h3.fragment We are
-    ul.fragment
-      li Lazy habit-makers
-      li Flock animals
-      li Impressionable
+    h2 What makes it even harder is that we are human, i.e.:
+    li.fragment We're #[i lazy habit makers]
+    li.fragment We're #[i flock animals]
+    li.fragment We're #[i impressionable]
 
     aside.notes(data-markdown).
       human nature makes us prone to making hasted and uneducated choices
 
   section
-    h1 We're lazy
-    h3.fragment Habit makers - 
-    p.fragment do what they've done before because they are comfortable with it.
+    h2 We're lazy habit makers, who
+    p.fragment do what they've done before because we're are comfortable with it
     p.fragment think new stuff is scary stuff
     p.fragment think repetition is easier than innovation
 
   section
-    h1 We're Flock animals
-    p.fragment Do whatever everyone else is doing
-    blockquote.fragment AngularJS all over the place? Must be good lets use it
+    h2 We're flock animals
+    p.fragment We do whatever everyone else is doing
+    blockquote.fragment AngularJS all over the scene? Must be good lets use it
 
   section
-    h1 We're Impressionable
+    h2 We're Impressionable
     p.fragment We believe the hype
     p.fragment Golden kid at last conference always gets attention
     p.fragment Fancy promo-site and API docs gets us (guilty!)
@@ -136,8 +138,7 @@ section
       li.fragment Will we need a lot of user input? 
       li.fragment What are the target user's habits, and consumption devices?
       li.fragment Content-driven or data-driven?
-      li.fragment Public or Private?
-      li.fragment SEO importance
+      li.fragment Public or Private? - SEO importance
       li.fragment Requirements and desires regarding speed & responsiveness
 
   section
@@ -146,12 +147,12 @@ section
 
 section
   section
-    h2.cap Case-study: 
+    h3.cap Case-study: 
     h2.cap Webapp frontend solutions
     p.fragment Lets look at webapps! After all, its what the majority of us are building these days
 
   section
-    p Webapps are used by people, not machines
+    h2 Webapps are used by people, not machines
     p UX for your use case should be front and center when planning out the solution.
 
     aside.notes(data-markdown).
@@ -159,13 +160,16 @@ section
 
   section
     h2.cap Decisions, decisions
-    p So much to choose from, something new every year
-    p Last year - Angular
-    p This year - React, Meteor
-    p MV*, SPA, Serverside vs Clientside - greatly differing technical approaches to the same problems
-    p So #[h3.fragment How to choose?]
+    ul
+      li.fragment So much to choose from, something new every year
+      li.fragment Last year - #[a(href='https://angularjs.org/') Angular], This year - #[a(href='http://facebook.github.io/react/') React], #[a(href='https://www.meteor.com/') Meteor]
+      li.fragment MV*, SPA, Serverside vs Clientside - greatly differing technical approaches to the same problems
+    .fragment 
+      p so 
+      h3 How to choose?
 
-  
+    aside.notes(data-markdown).
+      * Major differences that inevitably affect the user experience
 section
   section
     p Lets consider some fundamentally different technical approaches
@@ -184,6 +188,9 @@ section
     p -> execute on client 
     p -> fetch data, render UI
     p.fragment: b WHY do this on a consumer device when we have peta-zeta datacenters that can do this for us?
+
+    aside.notes(data-markdown).
+      as opposed to server-side..
 
   section
     p Because partial rendering and UI animations provide a 
@@ -243,8 +250,8 @@ section
 
 section
   section
-    h1 The hybrid approach
-    h3.cap.fragment Is there such a thing as "best of both worlds?"
+    h1.cap The hybrid approach
+    h3.fragment Is there such a thing as "best of both worlds?"
     
     aside.notes(data-markdown).
       * No such thing as "one-size-fits-all"
@@ -294,18 +301,17 @@ section
     h3.fragment Write once, run twice
     p.fragment The Holy Grail of webapp development?
 
-    aside.notes
-      p This approach has gained traction over the past year
-
   section
-    p Advancements in frontend tooling helps make it possible
+    p Advancements in frontend tech. helps make it possible
     ul
       li.fragment #[a(href='http://nodejs.org/') Node.JS] - JS on the server
       li.fragment #[a(href='http://browserify.org/') Browserify] - use browser JS modules on the server 
       li.fragment #[a(href='http://facebook.github.io/react/') Facebooks React] - Build reactive UIs in JS 
+      li.fragment #[a(href='http://pouchdb.com/') PouchDB] -  client <-> server DB syncing (replication)
 
     aside.notes(data-markdown).
       * Evangelized by Spike Brehm of AirBnB
+      * This approach has gained traction over the past year
 
   section
     b The idea:
@@ -315,10 +321,10 @@ section
       p JS modules and run them where it makes sense (server or client)
 
   section
-    p Examples
+    p: b Examples
     ul
       li.fragment Re-use validation rules client and server-side
-      li.fragment Render on the server initially, and then on client
+      li.fragment Render on the server initially, and from thereon client renders
       li.fragment Use same models/data-structure
 
   section(data-state="isomorphic-diagram")
@@ -385,13 +391,41 @@ section
           gofigureplugin.addStep('isomorphic', 
             figure.circle(browserWidth+100, 305, 160)
               .centeredText(browserWidth+100, 265, "Common Logic", {fontsize: 23, duration: 800})             
-              .centeredText(browserWidth+100, 305, "Markup/Rendering", dur)
-              .centeredText(browserWidth+100, 325, "Validation", dur)
-              .centeredText(browserWidth+100, 345, "Data-models", dur)
+              .centeredText(browserWidth+100, 305, "React Components", dur)
+              .centeredText(browserWidth+100, 325, "Validation rules", dur)
+              .centeredText(browserWidth+100, 345, "Data models", dur)
           );
         }, 1000);
       }, false);});
 
+  section
+    h2 UI rendering code sample
+
+    pre: code.javascript.
+      // Our component...
+      var HelloMessage = React.createClass({
+        render: function() {
+          return <div>Hello {this.props.name}</div>;
+        }
+      });
+
+      // ...can be rendered to a string on the server...
+      React.renderComponentToString(HelloMessage({name: "John"}));
+
+      // ...then on the client, renderComponent will preserve
+      // the server-rendered markup & just attach event handlers
+      React.renderComponent(< HelloMessage name="John" />, mountNode);
+
+section
   section(data-background='/img/hipocrite.jpg').greyBg
-    h2.dark Hi my name is Aksel, and I am a
-    h1.red.loud.noshadow hipocrite
+    h2 Hi my name is Aksel, and I am a
+    h1.red.loud.noshadow HIPOCRITE
+
+  section
+    h2.cap Do you see the irony?
+    p.fragment I just vouched for the latest and greatest, yet-to-be tested in production, approach to building webapps.
+    p.fragment #[i Exactly] this years JavaZone hype
+
+  section
+    h1 Thanks!
+    h3.cap Now for the questions

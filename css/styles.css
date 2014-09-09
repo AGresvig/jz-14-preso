@@ -34,3 +34,8 @@
 .reveal .greyBg {
 	background-color: rgba(92,92,92,0.5);
 }
+
+.reveal li {
+	margin: 10px 0;
+	list-style: none;
+}

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Reveal.js Enhanced</title>
+    <title>Choosing Tools - JZ' 14</title>
     <meta name="description" content="A framework for easily creating beautiful presentations using the Jade templating language">
     <meta name="author" content="Hakim El Hattab &amp; Aksel Gresvig">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,21 +36,25 @@
       <div class="slides">
         <!--Any section element inside of this container is displayed as a slide -->
         <section>
-          <h1>Choosing tools</h1>
-          <h3>The right way</h3>
+          <h1>How to choose tools</h1>
+          <h3>Finding the right terms & avoiding the "hammer first"-principle</h3>
           <p><small><a href="http://blog.akselgresvig.com">Aksel Gresvig</a> - <a href="http://accenture.no">Accenture</a> - JavaZone '14</small></p>
         </section>
         <section>
           <section>
             <h2>What this talk is about</h2>
             <ul>
-              <li class="fragment">Situation: We make software (decisions)</li>
+              <li>Situation: We make software (decisions)</li>
               <li class="fragment">Complication: The nature of our industry</li>
               <li class="fragment">Complication: The nature of humans</li>
-              <li class="fragment">Conclusion: Choosing the right tools is hard</li>
-              <li class="fragment">Message: Use-case always comes first. Then tech reqs.</li>
+              <li class="fragment">Conclusion: Defining terms & choosing tools is hard</li>
+              <li class="fragment">Message: Use-case always first - then tech reqs.</li>
               <li class="fragment">Case in point: Web App frontend solutions</li>
             </ul>
+          </section>
+          <section>
+            <p>I talk about frontend architecture because this is my main domain</p>
+            <p>But the principles didscussed apply to software architecture in general</p>
           </section>
           <section data-markdown>
             ## My motivation
@@ -76,25 +80,23 @@
               <p>To solve problems.</p>
               <p>Usually pretty tricky problems</p>
             </div>
+            <aside data-markdown class="notes">
+              * Its our job to do our best at solving the problem
+              
+            </aside>
           </section>
           <section data-markdown>
             This involves a lot of 
             ## Decision making
             
-          </section>
-          <section>
-            <h2>You've been building software for years</h2>
-            <p class="fragment">So your toolbox is already pretty loaded..  </p>
-            <div class="fragment">
-              <p>You have a set of preferences and skills that'll make you biased when architecting solutions.  </p>
-              <p>Rightfully so - this is the value of experience.</p>
-            </div>
-            <aside data-markdown class="notes">* The danger is to get wound up in our own preferable ways of doing things</aside>
+            aside.notes(data-markdown).
+                *  Need to ensure we have the technologically best possible starting point for solving the problem at hand
+                
           </section>
           <section>
             <h2>The nature of our industry</h2>
+            <p>..is tiresome.  </p>
             <div class="fragment">
-              <p>..is tiresome.  </p>
               <ul>
                 <li>Staying up to date demands a lot</li>
                 <li>There will *always* be new options around that promise the holy grail.  </li>
@@ -108,35 +110,45 @@
               
             </aside>
           </section>
+          <section>
+            <h2>You've been building software for years</h2>
+            <p class="fragment">So your toolbox is already pretty loaded..  </p>
+            <div class="fragment">
+              <p>You have a set of preferences and skills that'll make you biased when architecting solutions.  </p>
+              <p>Rightfully so - this is the value of experience.</p>
+            </div>
+            <aside data-markdown class="notes">
+              * Good thing. 
+              * We know what we're doing
+              * But the danger is to get wound up in our own preferable ways of doing things
+              
+            </aside>
+          </section>
         </section>
         <section>
           <section>
-            <h2>What makes it even harder is that we are human</h2>
-            <h3 class="fragment">We are</h3>
-            <ul class="fragment">
-              <li>Lazy habit-makers</li>
-              <li>Flock animals</li>
-              <li>Impressionable</li>
-            </ul>
+            <h2>What makes it even harder is that we are human, i.e.:</h2>
+            <li class="fragment">We're <i>lazy habit makers</i></li>
+            <li class="fragment">We're <i>flock animals</i></li>
+            <li class="fragment">We're <i>impressionable</i></li>
             <aside data-markdown class="notes">
               human nature makes us prone to making hasted and uneducated choices
               
             </aside>
           </section>
           <section>
-            <h1>We're lazy</h1>
-            <h3 class="fragment">Habit makers - </h3>
-            <p class="fragment">do what they've done before because they are comfortable with it.</p>
+            <h2>We're lazy habit makers, who</h2>
+            <p class="fragment">do what they've done before because we're are comfortable with it</p>
             <p class="fragment">think new stuff is scary stuff</p>
             <p class="fragment">think repetition is easier than innovation</p>
           </section>
           <section>
-            <h1>We're Flock animals</h1>
-            <p class="fragment">Do whatever everyone else is doing</p>
-            <blockquote class="fragment">AngularJS all over the place? Must be good lets use it</blockquote>
+            <h2>We're flock animals</h2>
+            <p class="fragment">We do whatever everyone else is doing</p>
+            <blockquote class="fragment">AngularJS all over the scene? Must be good lets use it</blockquote>
           </section>
           <section>
-            <h1>We're Impressionable</h1>
+            <h2>We're Impressionable</h2>
             <p class="fragment">We believe the hype</p>
             <p class="fragment">Golden kid at last conference always gets attention</p>
             <p class="fragment">Fancy promo-site and API docs gets us (guilty!)</p>
@@ -188,8 +200,7 @@
               <li class="fragment">Will we need a lot of user input? </li>
               <li class="fragment">What are the target user's habits, and consumption devices?</li>
               <li class="fragment">Content-driven or data-driven?</li>
-              <li class="fragment">Public or Private?</li>
-              <li class="fragment">SEO importance</li>
+              <li class="fragment">Public or Private? - SEO importance</li>
               <li class="fragment">Requirements and desires regarding speed & responsiveness</li>
             </ul>
           </section>
@@ -201,12 +212,12 @@
         </section>
         <section>
           <section>
-            <h2 class="cap">Case-study: </h2>
+            <h3 class="cap">Case-study: </h3>
             <h2 class="cap">Webapp frontend solutions</h2>
             <p class="fragment">Lets look at webapps! After all, its what the majority of us are building these days</p>
           </section>
           <section>
-            <p>Webapps are used by people, not machines</p>
+            <h2>Webapps are used by people, not machines</h2>
             <p>UX for your use case should be front and center when planning out the solution.</p>
             <aside data-markdown class="notes">
               UX (ease of use, intuituveness, attractiveness)
@@ -215,13 +226,16 @@
           </section>
           <section>
             <h2 class="cap">Decisions, decisions</h2>
-            <p>So much to choose from, something new every year</p>
-            <p>Last year - Angular</p>
-            <p>This year - React, Meteor</p>
-            <p>MV*, SPA, Serverside vs Clientside - greatly differing technical approaches to the same problems</p>
-            <p>So 
-              <h3 class="fragment">How to choose?</h3>
-            </p>
+            <ul>
+              <li class="fragment">So much to choose from, something new every year</li>
+              <li class="fragment">Last year - <a href="https://angularjs.org/">Angular</a>, This year - <a href="http://facebook.github.io/react/">React</a>, <a href="https://www.meteor.com/">Meteor</a></li>
+              <li class="fragment">MV*, SPA, Serverside vs Clientside - greatly differing technical approaches to the same problems</li>
+            </ul>
+            <div class="fragment">
+              <p>so </p>
+              <h3>How to choose?</h3>
+            </div>
+            <aside data-markdown class="notes">* Major differences that inevitably affect the user experience</aside>
           </section>
         </section>
         <section>
@@ -244,6 +258,10 @@
             <p>-> execute on client </p>
             <p>-> fetch data, render UI</p>
             <p class="fragment"><b>WHY do this on a consumer device when we have peta-zeta datacenters that can do this for us?</b></p>
+            <aside data-markdown class="notes">
+              as opposed to server-side..
+              
+            </aside>
           </section>
           <section>
             <p>Because partial rendering and UI animations provide a </p>
@@ -309,8 +327,8 @@
         </section>
         <section>
           <section>
-            <h1>The hybrid approach</h1>
-            <h3 class="cap fragment">Is there such a thing as "best of both worlds?"</h3>
+            <h1 class="cap">The hybrid approach</h1>
+            <h3 class="fragment">Is there such a thing as "best of both worlds?"</h3>
             <aside data-markdown class="notes">
               * No such thing as "one-size-fits-all"
               * Wouldnt it be fantastic with all the upsides and few of the downsides?
@@ -359,19 +377,18 @@ end
             <h1>Isomorphic Apps</h1>
             <h3 class="fragment">Write once, run twice</h3>
             <p class="fragment">The Holy Grail of webapp development?</p>
-            <aside class="notes">
-              <p>This approach has gained traction over the past year</p>
-            </aside>
           </section>
           <section>
-            <p>Advancements in frontend tooling helps make it possible</p>
+            <p>Advancements in frontend tech. helps make it possible</p>
             <ul>
               <li class="fragment"><a href="http://nodejs.org/">Node.JS</a> - JS on the server</li>
               <li class="fragment"><a href="http://browserify.org/">Browserify</a> - use browser JS modules on the server </li>
               <li class="fragment"><a href="http://facebook.github.io/react/">Facebooks React</a> - Build reactive UIs in JS </li>
+              <li class="fragment"><a href="http://pouchdb.com/">PouchDB</a> -  client <-> server DB syncing (replication)</li>
             </ul>
             <aside data-markdown class="notes">
               * Evangelized by Spike Brehm of AirBnB
+              * This approach has gained traction over the past year
               
             </aside>
           </section>
@@ -383,10 +400,10 @@ end
             </div>
           </section>
           <section>
-            <p>Examples</p>
+            <p><b>Examples</b></p>
             <ul>
               <li class="fragment">Re-use validation rules client and server-side</li>
-              <li class="fragment">Render on the server initially, and then on client</li>
+              <li class="fragment">Render on the server initially, and from thereon client renders</li>
               <li class="fragment">Use same models/data-structure</li>
             </ul>
           </section>
@@ -452,18 +469,46 @@ end
                   gofigureplugin.addStep('isomorphic', 
                     figure.circle(browserWidth+100, 305, 160)
                       .centeredText(browserWidth+100, 265, "Common Logic", {fontsize: 23, duration: 800})             
-                      .centeredText(browserWidth+100, 305, "Markup/Rendering", dur)
-                      .centeredText(browserWidth+100, 325, "Validation", dur)
-                      .centeredText(browserWidth+100, 345, "Data-models", dur)
+                      .centeredText(browserWidth+100, 305, "React Components", dur)
+                      .centeredText(browserWidth+100, 325, "Validation rules", dur)
+                      .centeredText(browserWidth+100, 345, "Data models", dur)
                   );
                 }, 1000);
               }, false);});
               
             </script>
           </section>
+          <section>
+            <h2>UI rendering code sample</h2>
+            <pre><code class="javascript">// Our component...
+var HelloMessage = React.createClass({
+  render: function() {
+    return <div>Hello {this.props.name}</div>;
+  }
+});
+
+// ...can be rendered to a string on the server...
+React.renderComponentToString(HelloMessage({name: "John"}));
+
+// ...then on the client, renderComponent will preserve
+// the server-rendered markup & just attach event handlers
+React.renderComponent(< HelloMessage name="John" />, mountNode);
+</code></pre>
+          </section>
+        </section>
+        <section>
           <section data-background="/img/hipocrite.jpg" class="greyBg">
-            <h2 class="dark">Hi my name is Aksel, and I am a</h2>
-            <h1 class="red loud noshadow">hipocrite</h1>
+            <h2>Hi my name is Aksel, and I am a</h2>
+            <h1 class="red loud noshadow">HIPOCRITE</h1>
+          </section>
+          <section>
+            <h2 class="cap">Do you see the irony?</h2>
+            <p class="fragment">I just vouched for the latest and greatest, yet-to-be tested in production, approach to building webapps.</p>
+            <p class="fragment"><i>Exactly</i> this years JavaZone hype</p>
+          </section>
+          <section>
+            <h1>Thanks!</h1>
+            <h3 class="cap">Now for the questions</h3>
           </section>
         </section>
       </div>
@@ -482,8 +527,8 @@ end
           history: true,
           center: true,
           
-          theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-          transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+          theme: Reveal.getQueryHash().theme || 'simple', // available themes are in /css/theme
+          transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
           
           // Parallax scrolling
           //parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
