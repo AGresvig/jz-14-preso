@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Choosing Tools - JZ' 14</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using the Jade templating language">
+    <meta name="author" content="Hakim El Hattab &amp; Aksel Gresvig">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+    <!--For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!--My styles-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+      
+    </script>
+    <!--if lt IE 9
+    script(src='lib/js/html5shiv.js')
+    
+    -->
+    <script src="lib/js/head.min.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!--Any section element inside of this container is displayed as a slide -->
+        <section>
+          <h1>How to choose tools</h1>
+          <h3>Finding the right terms & avoiding the "hammer first"-principle</h3>
+          <p><small><a href="http://blog.akselgresvig.com">Aksel Gresvig</a> - <a href="http://accenture.no">Accenture</a> - JavaZone '14</small></p>
+          <aside data-markdown class="notes">
+            * developer, more involved lately with architecture roles
+            * Fun to see frontend-concerns getting attention early on in planning
+            * "frontend architect"
+            
+          </aside>
+        </section>
+        <section>
+          <section>
+            <h2>What this talk is about</h2>
+            <ul>
+              <li>Situation: We make software (decisions)</li>
+              <li>Complication: The nature of our industry</li>
+              <li>Complication: The nature of humans</li>
+              <li>Conclusion: Defining terms & choosing tools is hard</li>
+              <li>Message: Use-case always first - then tech reqs.</li>
+              <li>Case in point: Web App frontend solutions</li>
+            </ul>
+            <aside data-markdown class="notes">
+              * complications that makes our job tough
+              * its tough to define the terms that help us make the right decisions
+              * 
+              
+            </aside>
+          </section>
+          <section>
+            <p>I talk about frontend architecture because this is my main domain</p>
+            <p>But the principles discussed apply to software architecture in general</p>
+          </section>
+          <section data-markdown>
+            ## My motivation
+            * Projects using the wrong tools (and the reasons for it)
+            * Blog posts like ["Why we left Angular"](https://news.ycombinator.com/item?id=7255227)
+            
+          </section>
+          <aside data-markdown class="notes">
+            * May seem obvious, but Ive seen the wrong terms over and over
+            
+          </aside>
+          <section>
+            <h2>What's in it for you?</h2>
+            <h4 class="fragment">Some hard-earned advice on what to keep in mind when planning new projects</h4>
+            <h4 class="fragment">Some up-to-date insight into the frontend architecture options</h4>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>We make software</h3>
+            <h2 class="fragment">Why?</h2>
+            <div class="fragment"> 
+              <p>To solve problems</p>
+            </div>
+            <aside data-markdown class="notes">
+              * Its our job to do our best at solving the problem
+              *  Need to ensure we have the technologically best possible starting point for solving the problem at hand
+              
+            </aside>
+          </section>
+          <section>
+            <h2>The nature of our industry</h2>
+            <p>..is tiresome.  </p>
+            <div class="fragment">
+              <ul>
+                <li>Staying up to date demands a lot</li>
+                <li>There will *always* be new options around that promise the holy grail.  </li>
+                <li>FOSS has made the landscape so fertile, yet so vast.  </li>
+              </ul>
+            </div>
+            <aside data-markdown class="notes">
+              * What you did last year isnt necessarily good enough anymore
+              * A lot of smart people out there, solving problems every day.  
+              * Latest advancements in software technology *should be considered*
+              
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>What makes it even harder is that we are human, i.e.:</h2>
+            <li class="fragment">We're <i>lazy habit makers</i></li>
+            <li class="fragment">We're <i>flock animals</i></li>
+            <li class="fragment">We're <i>impressionable</i></li>
+            <aside data-markdown class="notes">
+              human nature makes us prone to making hasted and uneducated choices
+              
+            </aside>
+          </section>
+          <section data-background="/img/lazyguyasleep.jpg" class="greyBg">
+            <h2>We're lazy habit makers, who</h2>
+            <p>do what they've done before because we're are comfortable with it</p>
+            <p>think new stuff is scary stuff</p>
+            <p>think repetition is easier than innovation</p>
+            <p><small>Photo: generalunitedindustries.com</small></p>
+          </section>
+          <section data-background="/img/flock_animals.jpg" class="greyBg">
+            <h2>We're flock animals</h2>
+            <p class="fragment">We do whatever everyone else is doing</p>
+            <blockquote class="fragment">AngularJS all over the scene? Must be good lets use it</blockquote>
+            <p><small>Photo: Dariusz Paciorek/Getty</small></p>
+          </section>
+          <section data-background="/img/fashion_victim.JPG" class="greyBg">
+            <h2>We're Impressionable</h2>
+            <p>We believe the hype</p>
+            <p>Golden kid at last conference always gets attention</p>
+            <p>Fancy promo-site and API docs gets us (guilty!)</p>
+            <p><small>Photo: BRANKOPOPOVICBLOG</small></p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <p>So how do we navigate the</p>
+            <h2>TECHNICAL LANDSCAPE</h2>
+            <p>and deal with our own</p>
+            <h2>LIMITATIONS?</h2>
+          </section>
+          <section>
+            <p>We ask the right</p>
+            <h2>QUESTIONS</h2>
+            <p>to find the right</p>
+            <h2>ANSWERS</h2>
+            <aside data-markdown class="notes">
+              * We need info
+              * about the problem domain
+              * about the user
+              * about the techinical limitations
+              
+            </aside>
+          </section>
+          <section>
+            <p>What really matters is the </p>
+            <h1 class="fragment fade-out">Use Case</h1>
+            <h1 class="fragment fade-in">User</h1>
+          </section>
+          <section>
+            <h3>Gain a 
+              <h1>THOROUGH</h1> understanding of your applications' problem domain
+            </h3>
+            <aside data-markdown class="notes">
+              * client
+              * users 
+              * research domain
+              
+            </aside>
+          </section>
+          <section> 
+            <p>What should the software you are building do? </p>
+            <p>Who is the target user?</p>
+            <p class="fragment fade-in">These are matters that always <b>should take precedence</b></p>
+            <aside data-markdown class="notes">
+              * when making decisions
+              
+            </aside>
+          </section>
+          <section>
+            <h3>Gain a 
+              <h1>SOLID</h1> understanding of your applications' technical requirements
+            </h3>
+          </section>
+          <section>
+            <h3 class="cap">Example Considerations</h3>
+            <ul>
+              <li class="fragment">Will we need a lot of user input? </li>
+              <li class="fragment">What are the target user's habits, and consumption devices?</li>
+              <li class="fragment">Content-driven or data-driven?</li>
+              <li class="fragment">Public or Private? - SEO importance</li>
+              <li class="fragment">Requirements and desires regarding speed & responsiveness</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Use this info to 
+              <h1>TAILOR</h1> the solution to your user's needs and your technical requirements
+            </h2>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3 class="cap">Case-study: </h3>
+            <h2 class="cap">Webapp frontend solutions</h2>
+            <p class="fragment">Lets look at webapps! After all, its what the majority of us are building these days</p>
+          </section>
+          <section>
+            <h2>Webapps are used by people, not machines</h2>
+            <p>UX for your use case should be front and center when planning out the solution.</p>
+            <aside data-markdown class="notes">
+              UX (ease of use, intuituveness, attractiveness)
+              
+            </aside>
+          </section>
+          <section>
+            <h2 class="cap">Decisions, decisions</h2>
+            <ul>
+              <li class="fragment">So much to choose from, something new every year</li>
+              <li class="fragment">Last year - <a href="https://angularjs.org/">Angular</a>, This year - <a href="http://facebook.github.io/react/">React</a>, <a href="https://www.meteor.com/">Meteor</a></li>
+              <li class="fragment">Differing technical approaches to the same problems</li>
+            </ul>
+            <div class="fragment">
+              <p>so </p>
+              <h3>How to choose?</h3>
+            </div>
+            <aside data-markdown class="notes">* Major differences that inevitably affect the user experience</aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <p>Lets consider some fundamentally different technical approaches</p>
+            <div class="fragment">
+              <p>like</p>
+              <h2>Clientside rendering</h2>
+              <p>(Backbone, Angular, Ember, Knockout)</p>
+            </div>
+          </section>
+          <section>
+            <p>..vs </p>
+            <h2>server-side rendering </h2>
+            <p>(JSP, Django, Ruby on Rails, Wicket, etc)</p>
+          </section>
+          <section>
+            <h3 class="cap">Clientside frameworks </h3>
+            <p>Server sends Javascript to client </p>
+            <p>-> execute on client </p>
+            <p>-> fetch data, render UI</p>
+            <p class="fragment"><b>WHY do this on a consumer device when we have peta-zeta datacenters that can do this for us?</b></p>
+            <aside data-markdown class="notes">
+              as opposed to server-side..
+              
+            </aside>
+          </section>
+          <section>
+            <p>Because partial rendering and UI animations provide a </p>
+            <h3>more responsive experience</h3>
+            <aside data-markdown class="notes">
+              * In applications with a lot dynamics (i.e. updating content), a lot of I/O, and generally data-driven platforms, this is extremely important
+              
+            </aside>
+          </section>
+          <section>
+            <h3 class="cap">Where SPAs win over traditional webapps</h3>
+            <li class="fragment">Responsive experience - no disturbing "flash of white"</li>
+            <li class="fragment">Speed (once bootstrapped) </li>
+            <li class="fragment">Separation of concerns - server provides data, client handles displaying it</li>
+            <aside data-markdown class="notes">
+              * Fluid native-like application feel
+              * Creates an efficient and pleasant experience for the end user
+              * not in any way by the request/response cycles that are HTTP!
+              
+            </aside>
+          </section>
+          <section>
+            <h3 class="cap">Where traditional server-side rendering wins over SPAs</h3>
+            <li class="fragment">"Initial load"-performance - especially on slower mobile devices</li>
+            <li class="fragment">Search engine optimization / crawlability</li>
+            <aside data-markdown class="notes">
+              * initial time-to-content can be unacceptable
+              * The magic 1-second-limit 
+              * Twitter make-over: reduce initial TTC by moving to server-side rendering 
+              * Because the server sends data, not formatted content. It is formatted client-side, the crawlers only see the "empty" html skeleton
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2 class="cap">Typical SPA based applications are</h2>
+            <li class="fragment">Behind a login (SEO not as important)</li>
+            <li class="fragment">Data-driven, with Input being important (not just Output)</li>
+            <li class="fragment">Web <b>apps!</b></li>
+          </section>
+          <section>
+            <h2 class="cap">Typical server-side based projects are</h2>
+            <li class="fragment">Public facing - SEO is important</li>
+            <li class="fragment">Content driven</li>
+            <li class="fragment">Fairly static (additions are common but not updates)</li>
+            <li class="fragment">Cacheable</li>
+            <li class="fragment">Web <b>sites!</b></li>
+          </section>
+          <section>
+            <p>There is a difference in nature between a </p>
+            <h2>WEB APP</h2>
+            <p>and a </p>
+            <h2>WEB PAGE</h2>
+            <aside data-markdown class="notes">
+              * Both can be built using the same underlying technologies, but the goals are very different.
+              
+            </aside>
+          </section>
+          <section>
+            <p>Which one are you building? </p>
+            <h3 class="cap">This should greatly inform choice of framework</h3>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1 class="cap">The hybrid approach</h1>
+            <h3 class="fragment">Is there such a thing as "best of both worlds?"</h3>
+            <aside data-markdown class="notes">
+              * No such thing as "one-size-fits-all"
+              * Wouldnt it be fantastic with all the upsides and few of the downsides?
+              
+            </aside>
+          </section>
+        </section>
+        <section data-background="/img/pjax.png" class="ghostwhite">
+          <section>
+            <h2>pjax</h2>
+            <p><code>pjax = pushState + ajax</code></p>
+            <blockquote>pjax loads html from your server into the current page without a full page load</blockquote>
+          </section>
+          <section>
+            <blockquote>The idea is you can't tell the difference between pjax page loads and normal page loads. </blockquote>
+            <blockquote>But really it's just ajax and pushState.</blockquote>
+            <aside data-markdown class="notes">
+              * Has been around since before the SPA frameworks
+              * Simple, tried & tested 
+              * Degrades very gracefully 
+              
+            </aside>
+          </section>
+          <section>
+            <p>On the client </p>
+            <pre><code><body>
+  <h1>My Site</h1>
+  <div class="container" id="pjax-container">
+    Go to <a href="/page/2">next page</a>.
+  </div>
+</body>
+</code></pre>
+            <pre><code class="javascript">$(document).pjax('a', '#pjax-container')</code></pre>
+          </section>
+          <section>
+            <p>On the server</p>
+            <pre><code class="rails">def index
+  if request.headers['X-PJAX']
+    render :layout => false
+  end
+end
+</code></pre>
+          </section>
+          <section>
+            <p>Why is this cool?</p>
+            <p class="fragment">Because its simple. Simple is good</p>
+            <p class="fragment">It gives SPA feel with server-side benefits</p>
+          </section>
+          <section>
+            <h3 class="cap">But..</h3>
+            <p>it doesn't really scale to full-size web app development</p>
+          </section>
+        </section>
+        <section data-background="#000" class="ghostwhite">
+          <section>
+            <h1>Isomorphic Apps</h1>
+            <div class="fragment">
+              <h3>Write once, run twice</h3>
+              <p>The Holy Grail of webapp development?</p>
+            </div><img src="/img/isomorphic.gif">
+            <aside data-markdown class="notes">
+              * Evangelized by Spike Brehm of AirBnB
+              * This approach has gained traction over the past year
+              
+            </aside>
+          </section>
+          <section>
+            <p>Advancements in frontend tech. helps make it possible</p>
+            <ul>
+              <li class="fragment"><a href="http://nodejs.org/">Node.JS</a> - JS on the server</li>
+              <li class="fragment"><a href="http://browserify.org/">Browserify</a> - use browser JS modules on the server </li>
+              <li class="fragment"><a href="http://facebook.github.io/react/">Facebooks React</a> - Build reactive UIs in JS </li>
+              <li class="fragment"><a href="http://pouchdb.com/">PouchDB</a> -  client <-> server DB syncing (replication)</li>
+            </ul>
+          </section>
+          <section><b>The idea:</b>
+            <div class="fragment">
+              <p>Put common application logic in</p>
+              <h3>Reusable</h3>
+              <p>JS modules and run them where it makes sense (server or client)</p>
+            </div>
+          </section>
+          <section>
+            <p><b>Examples</b></p>
+            <ul>
+              <li class="fragment">Re-use validation rules client and server-side</li>
+              <li class="fragment">Render on the server initially, and from thereon client renders</li>
+              <li class="fragment">Use same models/data-structure</li>
+            </ul>
+          </section>
+          <section data-state="isomorphic-diagram">
+            <h2>Isomorphic Apps - illustration</h2>
+            <div id="isomorphic" class="canvas"></div>
+            <script>
+              head(function(){ Reveal.addEventListener( 'isomorphic-diagram', function( event ) {
+                setTimeout(function() {
+                  $('#isomorphic').empty();
+                  
+                  //Add a drawing area to element with id 'figure', with the given width and height
+                  var figure = gofigure.create('isomorphic', '703', '600'); 
+                  
+                  //Draw a box and animate drawing immediately
+                  //box <drawing area or animatable>.box(x, y, width, height, [options])
+                  //centeredText <drawing area or animatable>.centeredText(x, y, text, [options])
+                  var browserY = 100.
+                      browserWidth = 303;
+                  figure.box(3, browserY, browserWidth, 300, {radius: 0})
+                    .centeredText(70, browserY+20, "BROWSER", {fontsize: 27})
+                    .line(3, browserY+35, browserWidth, browserY+35)
+                    .animate();
+                    
+                  var serverX = 500,
+                      serverHeight = 450;
+                  figure.box(serverX, 10, 200, serverHeight, {radius: 0})
+                    .centeredText(serverX+53, 30, "SERVER", {fontsize: 27})
+                    .line(serverX, 42, 800, 42)
+                    .animate();
+                    
+                  //Group two animations together and begin animation immediately
+                  //path <drawing area or animatable>.path(points, [options])
+                  gofigureplugin.addStep('isomorphic', 
+                    figure.box(20, browserY+50, 170, 100)
+                      .centeredText(103, browserY+72, "Clientside logic", {fontsize: 23})
+                      .centeredText(100, browserY+110, "window, $, DOM")
+                  );
+                  gofigureplugin.addStep('isomorphic', 
+                    figure.box(serverX+15, 70, 170, 200)
+                      .centeredText(serverX+100, 88, "Severside logic", {fontsize: 23})
+                      .centeredText(serverX+90, 125, "req/res, env")
+                  );
+                  
+                  gofigureplugin.addStep('isomorphic', 
+                    figure.circle(serverX+145, 200, 30, {duration: 100})
+                      .circle(serverX+145, 215, 30, {duration: 100})
+                      .circle(serverX+145, 230, 30, {duration: 100})
+                      .circle(serverX+57, 200, 30, {duration: 100})
+                      .circle(serverX+57, 215, 30, {duration: 100})
+                      .circle(serverX+57, 230, 30, {duration: 100})
+                      .centeredText(serverX+100, 165, "I/O")
+                  );
+                  
+                  var opts = {arrowheads: "end", duration:500 };
+                  gofigureplugin.addStep('isomorphic', 
+                    figure.arrow(browserWidth, browserY+50, serverX, browserY+50, opts)
+                      .centeredText(browserWidth+100, browserY+70, "JSON Data", opts)
+                      .arrow(serverX, browserY+90, browserWidth, browserY+90, opts)
+                  );
+                  
+                  var dur = {duration: 400};
+                  gofigureplugin.addStep('isomorphic', 
+                    figure.circle(browserWidth+100, 305, 160)
+                      .centeredText(browserWidth+100, 265, "Common Logic", {fontsize: 23, duration: 800})             
+                      .centeredText(browserWidth+100, 305, "React Components", dur)
+                      .centeredText(browserWidth+100, 325, "Validation rules", dur)
+                      .centeredText(browserWidth+100, 345, "Data models", dur)
+                  );
+                }, 1000);
+              }, false);});
+              
+            </script>
+          </section>
+          <section>
+            <h2>UI rendering code sample</h2>
+            <pre><code class="javascript">// Our component...
+var HelloMessage = React.createClass({
+  render: function() {
+    return <div>Hello {this.props.name}</div>;
+  }
+});
+
+// ...can be rendered to a string on the server...
+React.renderComponentToString(HelloMessage({name: "John"}));
+
+// ...then on the client, renderComponent will preserve
+// the server-rendered markup & just attach event handlers
+React.renderComponent(< HelloMessage name="John" />, mountNode);
+</code></pre>
+          </section>
+        </section>
+        <section>
+          <section data-background="/img/hipocrite.jpg" class="greyBg">
+            <h2>Hi my name is Aksel, and I am a</h2>
+            <h1 class="red loud noshadow">HIPOCRITE</h1>
+          </section>
+          <section>
+            <h2 class="cap">Do you see the irony?</h2>
+            <p class="fragment">I just vouched for the latest and greatest, yet-to-be tested in production, approach to building webapps.</p>
+            <p class="fragment"><i>Exactly</i> this years JavaZone hype</p>
+          </section>
+          <section>
+            <h1>Thanks!</h1>
+            <h3 class="cap">Now for the questions</h3>
+          </section>
+        </section>
+      </div>
+    </div>
+    <script>
+      //load libraries
+      head.js('js/reveal.min.js', function() {
+      
+      
+      
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+          
+          theme: Reveal.getQueryHash().theme || 'simple', // available themes are in /css/theme
+          transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+          
+          // Parallax scrolling
+          //parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+          //parallaxBackgroundSize: '2100px 900px',
+          
+          // Optional libraries used to extend on reveal.js
+          dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+            { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+            { src: 'plugin/gofigure/plugin.js', async: true, condition: function() { return true; } }
+          ]
+        });
+      });
+    </script>
+  </body>
+</html>

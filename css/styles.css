@@ -1,0 +1,41 @@
+.reveal .cap {
+  text-transform: capitalize; }
+
+.reveal .inline {
+  display: inline; }
+
+.reveal .canvas {
+  width: 1000px;
+  height: 550px;
+  background: url("/img/seamless_paper_texture.png") repeat;
+  border: 3px solid grey;
+  border-radius: 9px; }
+
+.reveal .dark {
+  color: #1f1f1f; }
+
+.reveal .noshadow {
+  text-shadow: none; }
+  .reveal .noshadow.red {
+    color: red; }
+
+.reveal .loud {
+  font-size: 6em;
+  font-family: impact; }
+
+.reveal .greyBg {
+  background-color: rgba(92, 92, 92, 0.6);
+  color: ghostwhite; }
+  .reveal .greyBg h1, .reveal .greyBg h2, .reveal .greyBg h3, .reveal .greyBg h4 {
+    color: ghostwhite; }
+
+.reveal li {
+  margin: 10px 0;
+  list-style: none; }
+
+.reveal .ghostwhite {
+  color: ghostwhite; }
+  .reveal .ghostwhite h1, .reveal .ghostwhite h2, .reveal .ghostwhite h3, .reveal .ghostwhite h4 {
+    color: ghostwhite; }
+
+/*# sourceMappingURL=styles.css.map */
