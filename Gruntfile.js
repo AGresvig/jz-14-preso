@@ -50,6 +50,11 @@ module.exports = function(grunt) {
 					'css/theme/solarized.css': 'css/theme/source/solarized.scss',
 					'css/theme/blood.css': 'css/theme/source/blood.scss'
 				}
+			},
+			styles: {
+				files: {
+					'css/styles.css': 'css/styles.scss'
+				}
 			}
 		},
 
@@ -105,6 +110,10 @@ module.exports = function(grunt) {
 				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
 				tasks: 'themes'
 			},
+			styles: {
+				files: [ 'css/styles.scss' ],
+				tasks: 'styles'
+			},
 			jade: {
 				files: ['**/*.jade'],
 				tasks: 'jade',
@@ -147,6 +156,9 @@ module.exports = function(grunt) {
 
 	// Default task
 	grunt.registerTask( 'default', [ 'jade', 'jshint', 'cssmin', 'uglify', 'qunit' ] );
+
+	// Theme task
+	grunt.registerTask( 'styles', [ 'styles' ] );
 
 	// Theme task
 	grunt.registerTask( 'themes', [ 'sass' ] );

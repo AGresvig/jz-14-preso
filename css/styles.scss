@@ -1,0 +1,54 @@
+.reveal .cap {
+	text-transform: capitalize;
+}
+
+.reveal .inline {
+	display: inline;
+}
+
+.reveal .canvas {
+	width: 1000px;
+	height: 550px;
+	background: url('/img/seamless_paper_texture.png') repeat;
+	border: 3px solid grey;
+	border-radius: 9px;
+}
+
+.reveal .dark {
+	color: #1f1f1f;
+}
+
+
+.reveal .noshadow {
+	text-shadow: none;
+	&.red {
+		color: red;
+	}
+}
+
+.reveal .loud {
+	font-size: 6em;
+	font-family: impact;
+}
+
+.reveal .greyBg {
+	background-color: rgba(92,92,92,0.6);
+	color: ghostwhite;
+	h1, h2, h3, h4 {
+		color: ghostwhite;
+	}
+}
+
+.reveal li {
+	margin: 10px 0;
+	list-style: none;
+}
+
+.reveal {
+	.ghostwhite {
+		color: ghostwhite;
+		h1, h2, h3, h4 {
+			color: ghostwhite;
+		}
+	}
+}

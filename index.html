@@ -39,22 +39,34 @@
           <h1>How to choose tools</h1>
           <h3>Finding the right terms & avoiding the "hammer first"-principle</h3>
           <p><small><a href="http://blog.akselgresvig.com">Aksel Gresvig</a> - <a href="http://accenture.no">Accenture</a> - JavaZone '14</small></p>
+          <aside data-markdown class="notes">
+            * developer, more involved lately with architecture roles
+            * Fun to see frontend-concerns getting attention early on in planning
+            * "frontend architect"
+            
+          </aside>
         </section>
         <section>
           <section>
             <h2>What this talk is about</h2>
             <ul>
               <li>Situation: We make software (decisions)</li>
-              <li class="fragment">Complication: The nature of our industry</li>
-              <li class="fragment">Complication: The nature of humans</li>
-              <li class="fragment">Conclusion: Defining terms & choosing tools is hard</li>
-              <li class="fragment">Message: Use-case always first - then tech reqs.</li>
-              <li class="fragment">Case in point: Web App frontend solutions</li>
+              <li>Complication: The nature of our industry</li>
+              <li>Complication: The nature of humans</li>
+              <li>Conclusion: Defining terms & choosing tools is hard</li>
+              <li>Message: Use-case always first - then tech reqs.</li>
+              <li>Case in point: Web App frontend solutions</li>
             </ul>
+            <aside data-markdown class="notes">
+              * complications that makes our job tough
+              * its tough to define the terms that help us make the right decisions
+              * 
+              
+            </aside>
           </section>
           <section>
             <p>I talk about frontend architecture because this is my main domain</p>
-            <p>But the principles didscussed apply to software architecture in general</p>
+            <p>But the principles discussed apply to software architecture in general</p>
           </section>
           <section data-markdown>
             ## My motivation
@@ -77,21 +89,13 @@
             <h3>We make software</h3>
             <h2 class="fragment">Why?</h2>
             <div class="fragment"> 
-              <p>To solve problems.</p>
-              <p>Usually pretty tricky problems</p>
+              <p>To solve problems</p>
             </div>
             <aside data-markdown class="notes">
               * Its our job to do our best at solving the problem
+              *  Need to ensure we have the technologically best possible starting point for solving the problem at hand
               
             </aside>
-          </section>
-          <section data-markdown>
-            This involves a lot of 
-            ## Decision making
-            
-            aside.notes(data-markdown).
-                *  Need to ensure we have the technologically best possible starting point for solving the problem at hand
-                
           </section>
           <section>
             <h2>The nature of our industry</h2>
@@ -110,20 +114,6 @@
               
             </aside>
           </section>
-          <section>
-            <h2>You've been building software for years</h2>
-            <p class="fragment">So your toolbox is already pretty loaded..  </p>
-            <div class="fragment">
-              <p>You have a set of preferences and skills that'll make you biased when architecting solutions.  </p>
-              <p>Rightfully so - this is the value of experience.</p>
-            </div>
-            <aside data-markdown class="notes">
-              * Good thing. 
-              * We know what we're doing
-              * But the danger is to get wound up in our own preferable ways of doing things
-              
-            </aside>
-          </section>
         </section>
         <section>
           <section>
@@ -136,22 +126,25 @@
               
             </aside>
           </section>
-          <section>
+          <section data-background="/img/lazyguyasleep.jpg" class="greyBg">
             <h2>We're lazy habit makers, who</h2>
-            <p class="fragment">do what they've done before because we're are comfortable with it</p>
-            <p class="fragment">think new stuff is scary stuff</p>
-            <p class="fragment">think repetition is easier than innovation</p>
+            <p>do what they've done before because we're are comfortable with it</p>
+            <p>think new stuff is scary stuff</p>
+            <p>think repetition is easier than innovation</p>
+            <p><small>Photo: generalunitedindustries.com</small></p>
           </section>
-          <section>
+          <section data-background="/img/flock_animals.jpg" class="greyBg">
             <h2>We're flock animals</h2>
             <p class="fragment">We do whatever everyone else is doing</p>
             <blockquote class="fragment">AngularJS all over the scene? Must be good lets use it</blockquote>
+            <p><small>Photo: Dariusz Paciorek/Getty</small></p>
           </section>
-          <section>
+          <section data-background="/img/fashion_victim.JPG" class="greyBg">
             <h2>We're Impressionable</h2>
-            <p class="fragment">We believe the hype</p>
-            <p class="fragment">Golden kid at last conference always gets attention</p>
-            <p class="fragment">Fancy promo-site and API docs gets us (guilty!)</p>
+            <p>We believe the hype</p>
+            <p>Golden kid at last conference always gets attention</p>
+            <p>Fancy promo-site and API docs gets us (guilty!)</p>
+            <p><small>Photo: BRANKOPOPOVICBLOG</small></p>
           </section>
         </section>
         <section>
@@ -179,15 +172,25 @@
             <h1 class="fragment fade-out">Use Case</h1>
             <h1 class="fragment fade-in">User</h1>
           </section>
-          <section> 
-            <p>What should the software you are building do? </p>
-            <p>Who is the target user?</p>
-            <p class="fragment fade-in">These are matters that always <b>should take precedence</b></p>
-          </section>
           <section>
             <h3>Gain a 
               <h1>THOROUGH</h1> understanding of your applications' problem domain
             </h3>
+            <aside data-markdown class="notes">
+              * client
+              * users 
+              * research domain
+              
+            </aside>
+          </section>
+          <section> 
+            <p>What should the software you are building do? </p>
+            <p>Who is the target user?</p>
+            <p class="fragment fade-in">These are matters that always <b>should take precedence</b></p>
+            <aside data-markdown class="notes">
+              * when making decisions
+              
+            </aside>
           </section>
           <section>
             <h3>Gain a 
@@ -229,7 +232,7 @@
             <ul>
               <li class="fragment">So much to choose from, something new every year</li>
               <li class="fragment">Last year - <a href="https://angularjs.org/">Angular</a>, This year - <a href="http://facebook.github.io/react/">React</a>, <a href="https://www.meteor.com/">Meteor</a></li>
-              <li class="fragment">MV*, SPA, Serverside vs Clientside - greatly differing technical approaches to the same problems</li>
+              <li class="fragment">Differing technical approaches to the same problems</li>
             </ul>
             <div class="fragment">
               <p>so </p>
@@ -276,18 +279,18 @@
             <li class="fragment">Responsive experience - no disturbing "flash of white"</li>
             <li class="fragment">Speed (once bootstrapped) </li>
             <li class="fragment">Separation of concerns - server provides data, client handles displaying it</li>
-            <aside class="notes">
-              * Fluid native-like user experience
-              * So we can create an efficient and pleasant experience for the end user, that *doesn't take her out of context*
-              * Let her be in the zone, and for chirst sake do not let her productivity and experience be hampered in any way by the request/response cycles that are HTTP!
+            <aside data-markdown class="notes">
+              * Fluid native-like application feel
+              * Creates an efficient and pleasant experience for the end user
+              * not in any way by the request/response cycles that are HTTP!
               
             </aside>
           </section>
           <section>
             <h3 class="cap">Where traditional server-side rendering wins over SPAs</h3>
             <li class="fragment">"Initial load"-performance - especially on slower mobile devices</li>
-            <li class="fragment">Search engine optimization hampered by crawlability</li>
-            <aside class="notes">
+            <li class="fragment">Search engine optimization / crawlability</li>
+            <aside data-markdown class="notes">
               * initial time-to-content can be unacceptable
               * The magic 1-second-limit 
               * Twitter make-over: reduce initial TTC by moving to server-side rendering 
@@ -297,13 +300,13 @@
         </section>
         <section>
           <section>
-            <h2 class="cap">Typical SPA projects are</h2>
+            <h2 class="cap">Typical SPA based applications are</h2>
             <li class="fragment">Behind a login (SEO not as important)</li>
             <li class="fragment">Data-driven, with Input being important (not just Output)</li>
             <li class="fragment">Web <b>apps!</b></li>
           </section>
           <section>
-            <h2 class="cap">Typical server-side MVC based projects are</h2>
+            <h2 class="cap">Typical server-side based projects are</h2>
             <li class="fragment">Public facing - SEO is important</li>
             <li class="fragment">Content driven</li>
             <li class="fragment">Fairly static (additions are common but not updates)</li>
@@ -335,14 +338,22 @@
               
             </aside>
           </section>
+        </section>
+        <section data-background="/img/pjax.png" class="ghostwhite">
           <section>
             <h2>pjax</h2>
             <p><code>pjax = pushState + ajax</code></p>
             <blockquote>pjax loads html from your server into the current page without a full page load</blockquote>
           </section>
           <section>
-            <blockquote>The idea is you can't tell the difference between pjax page loads and normal page loads. On complicated sites, browsing just "feels faster."</blockquote>
-            <blockquote class="fragment">But really it's just ajax and pushState.</blockquote>
+            <blockquote>The idea is you can't tell the difference between pjax page loads and normal page loads. </blockquote>
+            <blockquote>But really it's just ajax and pushState.</blockquote>
+            <aside data-markdown class="notes">
+              * Has been around since before the SPA frameworks
+              * Simple, tried & tested 
+              * Degrades very gracefully 
+              
+            </aside>
           </section>
           <section>
             <p>On the client </p>
@@ -373,10 +384,19 @@ end
             <h3 class="cap">But..</h3>
             <p>it doesn't really scale to full-size web app development</p>
           </section>
+        </section>
+        <section data-background="#000" class="ghostwhite">
           <section>
             <h1>Isomorphic Apps</h1>
-            <h3 class="fragment">Write once, run twice</h3>
-            <p class="fragment">The Holy Grail of webapp development?</p>
+            <div class="fragment">
+              <h3>Write once, run twice</h3>
+              <p>The Holy Grail of webapp development?</p>
+            </div><img src="/img/isomorphic.gif">
+            <aside data-markdown class="notes">
+              * Evangelized by Spike Brehm of AirBnB
+              * This approach has gained traction over the past year
+              
+            </aside>
           </section>
           <section>
             <p>Advancements in frontend tech. helps make it possible</p>
@@ -386,11 +406,6 @@ end
               <li class="fragment"><a href="http://facebook.github.io/react/">Facebooks React</a> - Build reactive UIs in JS </li>
               <li class="fragment"><a href="http://pouchdb.com/">PouchDB</a> -  client <-> server DB syncing (replication)</li>
             </ul>
-            <aside data-markdown class="notes">
-              * Evangelized by Spike Brehm of AirBnB
-              * This approach has gained traction over the past year
-              
-            </aside>
           </section>
           <section><b>The idea:</b>
             <div class="fragment">

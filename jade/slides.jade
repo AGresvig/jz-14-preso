@@ -6,20 +6,30 @@ section
   p: small #[a(href='http://blog.akselgresvig.com') Aksel Gresvig] - #[a(href='http://accenture.no') Accenture] - 
     | JavaZone '14
 
+  aside.notes(data-markdown).
+    * developer, more involved lately with architecture roles
+    * Fun to see frontend-concerns getting attention early on in planning
+    * "frontend architect"
+
 section
   section
     h2 What this talk is about
     ul
       li Situation: We make software (decisions)
-      li.fragment Complication: The nature of our industry
-      li.fragment Complication: The nature of humans
-      li.fragment Conclusion: Defining terms & choosing tools is hard
-      li.fragment Message: Use-case always first - then tech reqs.
-      li.fragment Case in point: Web App frontend solutions
+      li Complication: The nature of our industry
+      li Complication: The nature of humans
+      li Conclusion: Defining terms & choosing tools is hard
+      li Message: Use-case always first - then tech reqs.
+      li Case in point: Web App frontend solutions
+
+    aside.notes(data-markdown).
+      * complications that makes our job tough
+      * its tough to define the terms that help us make the right decisions
+      * 
 
   section
     p I talk about frontend architecture because this is my main domain
-    p But the principles didscussed apply to software architecture in general
+    p But the principles discussed apply to software architecture in general
 
   section(data-markdown).
     ## My motivation
@@ -59,18 +69,6 @@ section
       * A lot of smart people out there, solving problems every day.  
       * Latest advancements in software technology *should be considered*
 
-  section
-    h2 You've been building software for years
-    p.fragment So your toolbox is already pretty loaded..  
-    .fragment
-      p You have a set of preferences and skills that'll make you biased when architecting solutions.  
-      p Rightfully so - this is the value of experience.
-
-    aside.notes(data-markdown).
-      * Good thing. 
-      * We know what we're doing
-      * But the danger is to get wound up in our own preferable ways of doing things
-
 section
   section
     h2 What makes it even harder is that we are human, i.e.:
@@ -81,22 +79,25 @@ section
     aside.notes(data-markdown).
       human nature makes us prone to making hasted and uneducated choices
 
-  section
+  section(data-background='/img/lazyguyasleep.jpg').greyBg
     h2 We're lazy habit makers, who
-    p.fragment do what they've done before because we're are comfortable with it
-    p.fragment think new stuff is scary stuff
-    p.fragment think repetition is easier than innovation
+    p do what they've done before because we're are comfortable with it
+    p think new stuff is scary stuff
+    p think repetition is easier than innovation
+    p: small Photo: generalunitedindustries.com
 
-  section
+  section(data-background='/img/flock_animals.jpg').greyBg
     h2 We're flock animals
     p.fragment We do whatever everyone else is doing
     blockquote.fragment AngularJS all over the scene? Must be good lets use it
+    p: small Photo: Dariusz Paciorek/Getty
 
-  section
+  section(data-background='/img/fashion_victim.JPG').greyBg
     h2 We're Impressionable
-    p.fragment We believe the hype
-    p.fragment Golden kid at last conference always gets attention
-    p.fragment Fancy promo-site and API docs gets us (guilty!)
+    p We believe the hype
+    p Golden kid at last conference always gets attention
+    p Fancy promo-site and API docs gets us (guilty!)
+    p: small Photo: BRANKOPOPOVICBLOG
 
 section
   section
@@ -122,13 +123,22 @@ section
     h1.fragment.fade-out Use Case
     h1.fragment.fade-in User
 
+  section
+    h3 Gain a #[h1 THOROUGH] understanding of your applications' problem domain
+    
+    aside.notes(data-markdown).
+      * client
+      * users 
+      * research domain
+
   section  
     p What should the software you are building do? 
     p Who is the target user?
     p.fragment.fade-in These are matters that always #[b should take precedence]
+    
+    aside.notes(data-markdown).
+      * when making decisions
 
-  section
-    h3 Gain a #[h1 THOROUGH] understanding of your applications' problem domain
   section
     h3 Gain a #[h1 SOLID] understanding of your applications' technical requirements
 
@@ -163,7 +173,7 @@ section
     ul
       li.fragment So much to choose from, something new every year
       li.fragment Last year - #[a(href='https://angularjs.org/') Angular], This year - #[a(href='http://facebook.github.io/react/') React], #[a(href='https://www.meteor.com/') Meteor]
-      li.fragment MV*, SPA, Serverside vs Clientside - greatly differing technical approaches to the same problems
+      li.fragment Differing technical approaches to the same problems
     .fragment 
       p so 
       h3 How to choose?
@@ -205,30 +215,30 @@ section
     li.fragment Speed (once bootstrapped) 
     li.fragment Separation of concerns - server provides data, client handles displaying it
 
-    aside.notes.
-      * Fluid native-like user experience
-      * So we can create an efficient and pleasant experience for the end user, that *doesn't take her out of context*
-      * Let her be in the zone, and for chirst sake do not let her productivity and experience be hampered in any way by the request/response cycles that are HTTP!
+    aside.notes(data-markdown).
+      * Fluid native-like application feel
+      * Creates an efficient and pleasant experience for the end user
+      * not in any way by the request/response cycles that are HTTP!
 
   section
     h3.cap Where traditional server-side rendering wins over SPAs
     li.fragment "Initial load"-performance - especially on slower mobile devices
-    li.fragment Search engine optimization hampered by crawlability
+    li.fragment Search engine optimization / crawlability
     
-    aside.notes.
+    aside.notes(data-markdown).
       * initial time-to-content can be unacceptable
       * The magic 1-second-limit 
       * Twitter make-over: reduce initial TTC by moving to server-side rendering 
       * Because the server sends data, not formatted content. It is formatted client-side, the crawlers only see the "empty" html skeleton
 section
   section
-    h2.cap Typical SPA projects are
+    h2.cap Typical SPA based applications are
     li.fragment Behind a login (SEO not as important)
     li.fragment Data-driven, with Input being important (not just Output)
     li.fragment Web #[b apps!]
 
   section
-    h2.cap Typical server-side MVC based projects are
+    h2.cap Typical server-side based projects are
     li.fragment Public facing - SEO is important
     li.fragment Content driven
     li.fragment Fairly static (additions are common but not updates)
@@ -257,14 +267,20 @@ section
       * No such thing as "one-size-fits-all"
       * Wouldnt it be fantastic with all the upsides and few of the downsides?
 
+section(data-background='/img/pjax.png').ghostwhite
   section
     h2 pjax
     p: code pjax = pushState + ajax
     blockquote pjax loads html from your server into the current page without a full page load
 
   section
-    blockquote The idea is you can't tell the difference between pjax page loads and normal page loads. On complicated sites, browsing just "feels faster."
-    blockquote.fragment But really it's just ajax and pushState.
+    blockquote The idea is you can't tell the difference between pjax page loads and normal page loads. 
+    blockquote But really it's just ajax and pushState.
+
+    aside.notes(data-markdown).
+      * Has been around since before the SPA frameworks
+      * Simple, tried & tested 
+      * Degrades very gracefully 
 
   section
     p On the client 
@@ -296,10 +312,17 @@ section
     h3.cap But..
     p it doesn't really scale to full-size web app development
 
+section(data-background="#000").ghostwhite
   section
     h1 Isomorphic Apps
-    h3.fragment Write once, run twice
-    p.fragment The Holy Grail of webapp development?
+    .fragment
+      h3 Write once, run twice
+      p The Holy Grail of webapp development?
+    img(src='/img/isomorphic.gif')
+  
+    aside.notes(data-markdown).
+      * Evangelized by Spike Brehm of AirBnB
+      * This approach has gained traction over the past year
 
   section
     p Advancements in frontend tech. helps make it possible
@@ -308,10 +331,6 @@ section
       li.fragment #[a(href='http://browserify.org/') Browserify] - use browser JS modules on the server 
       li.fragment #[a(href='http://facebook.github.io/react/') Facebooks React] - Build reactive UIs in JS 
       li.fragment #[a(href='http://pouchdb.com/') PouchDB] -  client <-> server DB syncing (replication)
-
-    aside.notes(data-markdown).
-      * Evangelized by Spike Brehm of AirBnB
-      * This approach has gained traction over the past year
 
   section
     b The idea:
